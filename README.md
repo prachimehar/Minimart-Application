@@ -239,50 +239,54 @@ http://localhost:5173
 
 ### 🏠 Home Page
 
-![Home Page] <img width="1920" height="1080" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/c650124b-cdd8-497b-bd7a-0d3a3eeb4596" />
+ <img width="1920" height="1080" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/c650124b-cdd8-497b-bd7a-0d3a3eeb4596" />
 
 
 ---
 
 ### 🔐 Login Page
-
-![Login Page] <img width="1920" height="1080" alt="Screenshot (46)" src="https://github.com/user-attachments/assets/a3b724cd-3349-405a-802e-7d71792898da" />
+<img width="1920" height="1080" alt="Screenshot (46)" src="https://github.com/user-attachments/assets/a3b724cd-3349-405a-802e-7d71792898da" />
 
 
 ---
 
 ### 📊 Dashboard
 
-![Dashboard]<img width="1920" height="1080" alt="Screenshot (48)" src="https://github.com/user-attachments/assets/73c6abe4-c645-4c12-8b96-74f96bf0a0c1" />
-<img width="1920" height="1080" alt="Screenshot (47)" src="https://github.com/user-attachments/assets/c6c296b1-c283-4dd1-865f-09ddeccd2ecb" />
+<img width="1920" height="1080" alt="Screenshot (48)" src="https://github.com/user-attachments/assets/73c6abe4-c645-4c12-8b96-74f96bf0a0c1" />
+
 
 
 ---
 
 ### 📦 Products Management
-
-![Products] ![Uploading Screenshot (48).png…]()
+<img width="1920" height="1080" alt="Screenshot (47)" src="https://github.com/user-attachments/assets/c6c296b1-c283-4dd1-865f-09ddeccd2ecb" />
 
 
 ---
 
 ### 🛒 Orders Management
 
-![Orders] <img width="1920" height="1080" alt="Screenshot (49)" src="https://github.com/user-attachments/assets/81c54d1b-d83b-4ff7-aa33-1a340e76145a" />
+<img width="1920" height="1080" alt="Screenshot (49)" src="https://github.com/user-attachments/assets/81c54d1b-d83b-4ff7-aa33-1a340e76145a" />
 
 
 ---
 
 ### ➕ Create Order
 
-![Create Order]<img width="1920" height="1080" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/4c61c9bd-c9ed-4f5d-82c9-ebed053c80e1" />
+<img width="1920" height="1080" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/4c61c9bd-c9ed-4f5d-82c9-ebed053c80e1" />
+
+
+---
+
+### 🎤 InVoice Page
+
+<img width="1920" height="1080" alt="Screenshot (52)" src="https://github.com/user-attachments/assets/bf532c8a-4d31-4c42-9646-d57bd44da4f2" />
 
 
 ---
 
 ### 👥 Customer Management
-
-![Customers]<img width="1920" height="1080" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/9417bc41-0b2f-4673-a971-99b8a9d40d95" />
+<img width="1920" height="1080" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/9417bc41-0b2f-4673-a971-99b8a9d40d95" />
 
 
 
