@@ -9,12 +9,25 @@ export default function CreateOrder() {
     const [productId, setProductId] = useState("");
     const [quantity, setQuantity] = useState("");
 
-    // ✅ Fix 1: Fetch customers on mount
     useEffect(() => {
-        fetch("http://localhost:8080/api/customers")
-            .then((res) => res.json())
-            .then((data) => setCustomers(data))
-            .catch((err) => console.error("Failed to fetch customers:", err));
+
+        const fetchCustomers = async () => {
+
+            try {
+
+                const response = await api.get("/customers");
+
+                setCustomers(response.data);
+
+            } catch (error) {
+
+                console.error("Failed to fetch customers:", error);
+
+            }
+        };
+
+        fetchCustomers();
+
     }, []);
 
     const handleSubmit = async (e) => {

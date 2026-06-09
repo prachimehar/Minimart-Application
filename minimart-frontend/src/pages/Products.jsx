@@ -232,13 +232,11 @@ export default function Products() {
                     onChange={handleChange}
                     className="border p-3 rounded-xl outline-none focus:ring-2 focus:ring-black"
                 >
-                    <option value="1">
-                        Electronics
-                    </option>
-
-                    <option value="2">
-                        Accessories
-                    </option>
+                    <option value="1">Electronics</option>
+                    <option value="2">Groceries</option>
+                    <option value="3">Fashion</option>
+                    <option value="4">Books</option>
+                    <option value="5">Stationery</option>
                 </select>
 
                 <button
