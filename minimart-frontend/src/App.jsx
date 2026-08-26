@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-
+import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/Dashboard";
 import ProductsPage from "./pages/Products";
 import OrdersPage from "./pages/Orders";
@@ -71,6 +71,10 @@ export default function App() {
                 <Route
                     path="/login"
                     element={<LoginPage setIsLoggedIn={login} />}
+                />
+                <Route 
+                    path="/register" 
+                    element={<RegisterPage />} 
                 />
                 <Route
                     path="/app/*"
