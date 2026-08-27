@@ -2,6 +2,7 @@ package com.minimart.config;
 
 import com.minimart.security.JwtFilter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -25,6 +26,9 @@ public class SecurityConfig {
 
     private final JwtFilter jwtFilter;
 
+    @Value("${frontend.url}")
+    private String frontendUrl;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -44,7 +48,8 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-        List.of(frontendUrl));
+                List.of(frontendUrl)
+        );
 
         configuration.setAllowedMethods(
                 List.of(
@@ -53,13 +58,16 @@ public class SecurityConfig {
                         "PUT",
                         "DELETE",
                         "OPTIONS"
-                ));
+                )
+        );
 
         configuration.setAllowedHeaders(
-                List.of("*"));
+                List.of("*")
+        );
 
         configuration.setExposedHeaders(
-                List.of("Authorization"));
+                List.of("Authorization")
+        );
 
         configuration.setAllowCredentials(true);
 
@@ -68,7 +76,8 @@ public class SecurityConfig {
 
         source.registerCorsConfiguration(
                 "/**",
-                configuration);
+                configuration
+        );
 
         return source;
     }
@@ -82,34 +91,41 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
 
                 .cors(cors -> cors.configurationSource(
-                        corsConfigurationSource()))
+                        corsConfigurationSource()
+                ))
 
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
-                                SessionCreationPolicy.STATELESS))
+                                SessionCreationPolicy.STATELESS
+                        )
+                )
 
                 .authorizeHttpRequests(auth -> auth
 
                         // CORS preflight
                         .requestMatchers(
                                 HttpMethod.OPTIONS,
-                                "/**")
+                                "/**"
+                        )
                         .permitAll()
 
-                        // Public endpoints
+                        // Public authentication endpoints
                         .requestMatchers(
                                 "/api/auth/**",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**")
+                                "/v3/api-docs/**"
+                        )
                         .permitAll()
 
-                        // Everything else requires JWT
+                        // All other endpoints require JWT
                         .anyRequest()
-                        .authenticated())
+                        .authenticated()
+                )
 
                 .addFilterBefore(
                         jwtFilter,
-                        UsernamePasswordAuthenticationFilter.class)
+                        UsernamePasswordAuthenticationFilter.class
+                )
 
                 .build();
     }
