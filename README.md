@@ -305,10 +305,7 @@ http://localhost:5173
 
 ## 🎯 Future Enhancements
 
-* User Registration
 * Admin/User Roles
 * Sales Reports
 * Email Notifications
 * Docker Deployment
-* Cloud Hosting
-
