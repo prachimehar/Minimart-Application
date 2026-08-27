@@ -2,15 +2,27 @@ package com.minimart.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
 import java.util.Date;
 
 @Service
 public class JwtService {
 
-    private static final String SECRET =
-            "mySecretKeymySecretKeymySecretKey12345";
+    private final String secret;
+
+    public JwtService(@Value("${jwt.secret}") String secret) {
+        this.secret = secret;
+    }
+
+    private Key getSigningKey() {
+        return Keys.hmacShaKeyFor(
+                secret.getBytes(StandardCharsets.UTF_8)
+        );
+    }
 
     public String generateToken(String username) {
 
@@ -19,13 +31,11 @@ public class JwtService {
                 .setIssuedAt(new Date())
                 .setExpiration(
                         new Date(
-                                System.currentTimeMillis()
-                                        + 86400000
+                                System.currentTimeMillis() + 86400000
                         )
                 )
                 .signWith(
-                        Keys.hmacShaKeyFor(
-                                SECRET.getBytes()),
+                        getSigningKey(),
                         SignatureAlgorithm.HS256
                 )
                 .compact();
@@ -34,9 +44,7 @@ public class JwtService {
     public String extractUsername(String token) {
 
         return Jwts.parserBuilder()
-                .setSigningKey(
-                        Keys.hmacShaKeyFor(
-                                SECRET.getBytes()))
+                .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody()
@@ -47,13 +55,12 @@ public class JwtService {
 
         try {
             Jwts.parserBuilder()
-                    .setSigningKey(
-                            Keys.hmacShaKeyFor(
-                                    SECRET.getBytes()))
+                    .setSigningKey(getSigningKey())
                     .build()
                     .parseClaimsJws(token);
 
             return true;
+
         } catch (Exception e) {
             return false;
         }
